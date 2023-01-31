@@ -1,14 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { ItemsContext } from '../../context/ItemsContext.js';
 import './Main.css';
 
 export default function Main() {
 
+  const { items } = useContext(ItemsContext);
+
+  // console.log('items', items);
 
   return (
     <div>
-      {/* {list.map((item) => (
-        <li className='item' key={item.id}>{item.description}</li>
-      ))} */}
+      {items.map((item) => (
+        <p key={item.id}>{item.description}</p>
+      ))}
     </div>
   );
 }
